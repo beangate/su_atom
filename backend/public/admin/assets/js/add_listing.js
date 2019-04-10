@@ -15,8 +15,8 @@ $("#add_more").click(function(){
 var ap_row="";
 var b=$("#spec_type").text();
 ap_row+="<div class='row'><div class='col-md-1'><label>#</label><br><span>"+count+"</span></div>";
-ap_row+=" <div class='col-md-4'><label>Specification</label><input type='text' class='form-control' name=''></div>";
-ap_row+=" <div class='col-md-4'><label>Specification Name</label><input type='text' class='form-control name=''></div>";
+ap_row+=" <div class='col-md-4'><label>Specification</label><input type='text' class='form-control product_specification_heading'></div>";
+ap_row+=" <div class='col-md-4'><label>Specification Name</label><input type='text' class='form-control product_specification_name'></div>";
 ap_row+="<div class='col-md-1'><label>Action</label><button type='button' class='btn btn-danger  btn-block' id='remove'><span class='fas fa-minus' id='remove'></span></button></div></div>";
 ap_row+="<hr>";
 count++;

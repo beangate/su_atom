@@ -1,8 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\ProductSpecs;
 use App\Product;
+use App\ProductImage;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -34,42 +35,36 @@ class ProductController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-        dd($request);
-         $data = $request->except('_token');
-            $a = count($data['product_name']);
-           for($i=0; $i < $a; $i++){
+    {            
+                 // dd($request);
                 $p = new Product;
-                $p->product_name=$data['product_name'][$i];
-                $p->product_price=$data['product_price'][$i];
-                $p->product_company=$data['product_company'][$i];
-                $p->product_description=$data['product_description'][$i];
-                $p->warrenty_summary=$data['warrenty_summary'][$i];
-                $p->covered_warrenty=$data['covered_warrenty'][$i];
-                $p->not_covered_warrenty=$data['not_covered_warrenty'][$i];
-                $p->warrenty_service_type=$data['warrenty_service_type'][$i];
+                $p->product_name=$request->product_name[0];
+                $p->product_price=$request->product_price[0];
+                $p->product_company=$request->product_company[0];
+                $p->product_description=$request->product_description[0];
+                $p->warrenty_summary=$request->warrenty_summary[0];
+                $p->covered_warrenty=$request->covered_warrenty[0];
+                $p->not_covered_warrenty=$request->not_covered_warrenty[0];
+                $p->warrenty_service_type=$request->warrenty_service_type[0];    
                 $p->save();
-              
-            }    
-        
-        //  $data = $request->except('_token');
-        //  dd($data);
+                $no =  $request->product_specification_name;
+               
+                foreach ($no as $i) {
+                    $s = new ProductSpecs;
+      
+                    $s->product_id = 1;
+                    $s->specification_type = $request->product_specification_name[0];
+                    $s->specification_heading = $request->product_specification_heading[0];
+                    $s->specification_name = $request->product_specification_name[0];
+                    $s->save();  
+                 }  
+                  
+                  // dd($request->image1);
+                  $image = $request->image1;
+                  dd($image);
 
-        // $p = new Product;
-        // $p->product_name=$request->product_name[$i];
-        // $p->product_price=$request->product_price[$i];
-        // $p->discount=$request->discount[$i];
-        // $p->product_company=$request->product_company[$i];
-        // $p->product_description=$request->product_description[$i];
-        // $p->warrenty_summary=$request->warrenty_summary[$i];
-        // $p->covered_warrenty=$request->covered_warrenty[$i];
-        // $p->not_covered_warrenty=$request->not_covered_warrenty[$i];
-        // $p->warrenty_service_type=$request->warrenty_service_type[$i];
-        // $p->quantity=$request->quantity[$i];
-        // $p->save();
-        $msg = 'Product is added';
-        return response()->json(array($msg),200);
-       
+                $msg = 'Product is added';
+                return response()->json(array($msg),200);       
 
 
     }

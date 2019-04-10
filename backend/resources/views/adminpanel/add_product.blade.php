@@ -65,10 +65,10 @@
                 </div>
                <div class="card">
                  <div class="card-header">
-                   <div class="col-md-6">Product specification </div> <div class="col-md-6"><select class="form-control" id="spec_type" name="product_specification">
-                        <option value=" " >General</option>
-                        <option >Option 2</option>
-                        <option>Option 3</option>
+                   <div class="col-md-6">Product specification </div> <div class="col-md-6"><select class="form-control product_specification_type" id="spec_type" >
+                        <option value="1" >General</option>
+                        <option  value="2">Option 2</option>
+                        <option  value="3">Option 3</option>
                       </select></div>
                  </div>
                  <div class="card-body" id="add_more_div" style="display:none;">
@@ -81,11 +81,11 @@
                         <div class="col-md-4">
 
                      <label>Specification</label>
-                       <input type="text" class="form-control" name="">
+                       <input type="text" class="form-control product_specification_heading" name="">
                      </div>
                      <div class="col-md-4">
                      <label>Specification Name</label>
-                       <input type="text" class="form-control" name="">
+                       <input type="text" class="form-control product_specification_name" name="">
                      </div>
                      <div class="col-md-1">
                      <label>Action</label>
@@ -149,7 +149,7 @@
                         <div class="col-6 col-sm-4">
                           <label class="imagecheck mb-4">
                            
-      <input type="file" class="input_file form-control-file border img1" id="" name="">
+      <input type="file" class="input_file form-control-file border img1 "  name="img1">
       <br>
                             <figure class="imagecheck-figure">
                               <img id="img1" class="prev_img">
@@ -169,7 +169,7 @@
                         <div class="col-6 col-sm-4">
                           <label class="imagecheck mb-4">
                             <div class="custom-file mb-4">
-     <input type="file" class="input_file form-control-file border img1" id="" name="">
+     <input type="file" class="input_file form-control-file border " id="" name="">
     </div>
                             <figure class="imagecheck-figure">
                               <img src="{{ url('admin/assets/img/news/img03.jpg') }}" alt="}" class="imagecheck-image">
@@ -179,7 +179,7 @@
                         <div class="col-6 col-sm-4">
                           <label class="imagecheck mb-4">
                              <div class="custom-file mb-3">
-      <input type="file" class="input_file form-control-file border img1" id="" name="">
+      <input type="file" class="input_file form-control-file border image1" id="image1" name="">
     </div>
                             <figure class="imagecheck-figure">
                               <img src="{{ url('admin/assets/img/news/img04.jpg') }}" alt="}" class="imagecheck-image">
@@ -236,7 +236,13 @@
     var covered_warrenty=[];
     var not_covered_warrenty=[];
     var warrenty_service_type=[];
+    var product_specification_type=[];
+    var product_specification_heading=[];
+    var product_specification_name=[];
+    var image1=[];
 
+    var img = $('#image1').val();
+    alert(img);
     $('.product_company').each(function(){
    product_company.push($(this).val());
   });
@@ -261,17 +267,29 @@
       $('.warrenty_service_type').each(function(){
    warrenty_service_type.push($(this).val());
   });
+       $('.product_specification_name').each(function(){
+   product_specification_name.push($(this).val());
+  });
+        $('.product_specification_heading').each(function(){
+   product_specification_heading.push($(this).val());
+  });
+         $('.product_specification_type').each(function(){
+   product_specification_type.push($(this).val());
+  });
+         $('.image1').each(function(){
+   image1.push($(this).val());
+  });
  $.ajaxSetup({
     headers: {
         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
     }
   });
-    alert(product_company)
+    // alert(product_company)
   $.ajax({
     type: "POST",
     url: '/product',
     // data: new FormData($("#product_form")[0]),
-    data: {product_company:product_company, product_name:product_name ,product_description:product_description,product_price:product_price,not_covered_warrenty:not_covered_warrenty,warrenty_summary:warrenty_summary,covered_warrenty:covered_warrenty,warrenty_service_type:warrenty_service_type},
+    data: {product_company:product_company, product_name:product_name ,product_description:product_description,product_price:product_price,not_covered_warrenty:not_covered_warrenty,warrenty_summary:warrenty_summary,covered_warrenty:covered_warrenty,warrenty_service_type:warrenty_service_type,product_specification_type:product_specification_type,product_specification_heading:product_specification_heading,product_specification_name:product_specification_name,image1:image1},
     //    processData: false,
     // contentType: false,
     success: function (data) {
