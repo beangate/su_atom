@@ -137,11 +137,12 @@
                    </div>
                  </div>
                </div>
-           </div>
-                <div class="card">
+           </div>  
+              <div class="card">
                   <div class="card-header">
                     <h4>Upload Image</h4>
                   </div>
+                  <form  enctype="multipart/form-data" method="post" id="form-image">
                   <div class="card-body">
                     <div class="form-group">
                       <label class="form-label">Image Check</label>
@@ -149,7 +150,7 @@
                         <div class="col-6 col-sm-4">
                           <label class="imagecheck mb-4">
                            
-      <input type="file" class="input_file form-control-file border img1 "  name="img1">
+      <input type="file" class="input_file form-control-file border img1 "  name="product_image1">
       <br>
                             <figure class="imagecheck-figure">
                               <img id="img1" class="prev_img">
@@ -211,9 +212,8 @@
                     <center><button type="button" id="save" class="btn btn-info">Submit</button></center>
                   </div>
                 </div>
-          </form>
+              </form>
               </div>
-              
             </div>
           </div>
         </section>
@@ -242,7 +242,7 @@
     var image1=[];
 
     var img = $('#image1').val();
-    alert(img);
+    // alert(img);
     $('.product_company').each(function(){
    product_company.push($(this).val());
   });
@@ -276,9 +276,6 @@
          $('.product_specification_type').each(function(){
    product_specification_type.push($(this).val());
   });
-         $('.image1').each(function(){
-   image1.push($(this).val());
-  });
  $.ajaxSetup({
     headers: {
         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -289,10 +286,10 @@
     type: "POST",
     url: '/product',
     // data: new FormData($("#product_form")[0]),
-    data: {product_company:product_company, product_name:product_name ,product_description:product_description,product_price:product_price,not_covered_warrenty:not_covered_warrenty,warrenty_summary:warrenty_summary,covered_warrenty:covered_warrenty,warrenty_service_type:warrenty_service_type,product_specification_type:product_specification_type,product_specification_heading:product_specification_heading,product_specification_name:product_specification_name,image1:image1},
-    //    processData: false,
-    // contentType: false,
+    data: {product_company:product_company, product_name:product_name ,product_description:product_description,product_price:product_price,not_covered_warrenty:not_covered_warrenty,warrenty_summary:warrenty_summary,covered_warrenty:covered_warrenty,warrenty_service_type:warrenty_service_type,product_specification_type:product_specification_type,product_specification_heading:product_specification_heading,product_specification_name:product_specification_name},
     success: function (data) {
+   image_insert();
+
       console.log(data)
        // $("#result").html(data);
        // refreshCourse();
@@ -312,6 +309,32 @@
 });
 
     });
+
+    function image_insert(){
+      alert("image");
+      $.ajax({
+        type:"POST",
+        url:"/product_image",
+        data: new FormData($("#form-image")[0]),
+        success: function (data) {
+        console.log(data)
+       alert(data);
+    },
+    error: function (data) {
+      alert(data)
+
+        console.log(data);
+        // if(data.status == 403){
+        //     showMsg(1,"Unauthorised User",1500);
+        //     return;
+        // }
+        // showMsg(1,"Cannot Add courses",1500);
+
+    },
+
+
+      })
+    }
 });
 
 </script>

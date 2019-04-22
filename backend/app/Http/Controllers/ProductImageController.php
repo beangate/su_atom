@@ -35,14 +35,15 @@ class ProductImageController extends Controller
      */
     public function store(Request $request)
     {
-        //
-        $p=new ProductImage;
-        $p->product_id=$request->product_id;
-        $p->image=$request->image;
-        $p->caption=$request->caption;
-        $p->save();
-        $msg = 'product image is added';
-        return response()->json(array($msg),200);
+         
+         dd($request->product_image1);
+        // $p=new ProductImage;
+        // $p->product_id=$request->product_id;
+        // $p->image=$request->image;
+        // $p->caption=$request->caption;
+        // $p->save();
+        // $msg = 'product image is added';
+        // return response()->json(array($msg),200);
        
     }
 
