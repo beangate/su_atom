@@ -89,7 +89,7 @@
                      </div>
                      <div class="col-md-1">
                      <label>Action</label>
-                       <!-- <button class="btn btn-danger  btn-block"><span class="fas fa-minus"></span></button> -->
+                       {{-- <button class="btn btn-danger  btn-block" ><span class="fas fa-minus"></span></button> --}}
                      </div>
                    </div>
                    <hr>
@@ -98,6 +98,7 @@
                    <button type="button" class="btn btn-primary" id="add_more">Add More</button>
                  </div>
                </div>
+
                <div class="card">
                  <div class="card-header">
                    Product Warranty
@@ -137,7 +138,9 @@
                    </div>
                  </div>
                </div>
-           </div>  
+           </div>
+            <center><button type="button" id="save" class="btn btn-info">Submit</button></center>
+          </form>
               <div class="card">
                   <div class="card-header">
                     <h4>Upload Image</h4>
@@ -209,7 +212,7 @@
                         </div>
                       </div>
                     </div>
-                    <center><button type="button" id="save" class="btn btn-info">Submit</button></center>
+                    <center><button type="button" id="image_save" class="btn btn-info">Submit</button></center>
                   </div>
                 </div>
               </form>
@@ -281,41 +284,39 @@
         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
     }
   });
+
+    // var data1 = new FormData($("#form-image")[0]);
+
     // alert(product_company)
   $.ajax({
     type: "POST",
     url: '/product',
-    // data: new FormData($("#product_form")[0]),
     data: {product_company:product_company, product_name:product_name ,product_description:product_description,product_price:product_price,not_covered_warrenty:not_covered_warrenty,warrenty_summary:warrenty_summary,covered_warrenty:covered_warrenty,warrenty_service_type:warrenty_service_type,product_specification_type:product_specification_type,product_specification_heading:product_specification_heading,product_specification_name:product_specification_name},
     success: function (data) {
-   image_insert();
-
-      console.log(data)
-       // $("#result").html(data);
-       // refreshCourse();
+    console.log(data)
        alert(data);
     },
     error: function (data) {
       alert(data)
-
         console.log(data);
-        // if(data.status == 403){
-        //     showMsg(1,"Unauthorised User",1500);
-        //     return;
-        // }
-        // showMsg(1,"Cannot Add courses",1500);
-
     },
 });
 
     });
 
-    function image_insert(){
+    $("#image_save").on('click',function(){
       alert("image");
+      $.ajaxSetup({
+    headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    }
+});
       $.ajax({
         type:"POST",
-        url:"/product_image",
+        url:"/product-image",
         data: new FormData($("#form-image")[0]),
+        processData: false,
+        contentType: false,    
         success: function (data) {
         console.log(data)
        alert(data);
@@ -334,7 +335,7 @@
 
 
       })
-    }
+    })
 });
 
 </script>

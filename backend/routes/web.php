@@ -1,8 +1,11 @@
 <?php
 
 
-Route::get('/', function () {
+Route::get('/admin-login', function () {
     return view('adminpanel.index');
+});
+Route::get('/', function () {
+    return view('web.index');
 });
 // Route::get('/add-product', function () {
 //     return view('adminpanel.add_product');
@@ -17,7 +20,7 @@ Route::get('/payment', function () {
     return view('adminpanel.payment');
 });
 
-Route::post('product_image','ProductImageController@store');
+// Route::post('product_image','ProductImageController@store');
 
 // Route::post('/product-image', function () {
 //     return view('adminpanel.payment');
@@ -25,4 +28,5 @@ Route::post('product_image','ProductImageController@store');
 
 
 Route::resource('product','ProductController');
-// Route::resource('product-image','ProductImageController');
+Route::resource('shop','ShopController');
+Route::resource('product-image','ProductImageController');

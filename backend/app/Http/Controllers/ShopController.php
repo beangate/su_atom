@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\ProductImage;
+use App\Shop;
+use App\Product;
+
 use Illuminate\Http\Request;
 
-class ProductImageController extends Controller
+class ShopController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +16,8 @@ class ProductImageController extends Controller
      */
     public function index()
     {
-        //
+        $p = Product::all();
+        return view('web.categories',['product'=>$p]);
     }
 
     /**
@@ -35,27 +38,16 @@ class ProductImageController extends Controller
      */
     public function store(Request $request)
     {
-         
-         // dd($request->product_image1);
-        $p=new ProductImage;
-        $p->product_id = 1;
-        $img_dest = 'uploads';
-        $img1 = $request->file('product_image1');
-        $img1->move($img_dest,$img1->getClientOriginalName());
-        $p->image=$img1->getClientOriginalName();
-        $p->save();
-        $msg = 'product image is added';
-        return response()->json(array($msg),200);
-       
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\ProductImage  $productImage
+     * @param  \App\cr  $cr
      * @return \Illuminate\Http\Response
      */
-    public function show(ProductImage $productImage)
+    public function show(cr $cr)
     {
         //
     }
@@ -63,10 +55,10 @@ class ProductImageController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\ProductImage  $productImage
+     * @param  \App\cr  $cr
      * @return \Illuminate\Http\Response
      */
-    public function edit(ProductImage $productImage)
+    public function edit(cr $cr)
     {
         //
     }
@@ -75,10 +67,10 @@ class ProductImageController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\ProductImage  $productImage
+     * @param  \App\cr  $cr
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, ProductImage $productImage)
+    public function update(Request $request, cr $cr)
     {
         //
     }
@@ -86,10 +78,10 @@ class ProductImageController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\ProductImage  $productImage
+     * @param  \App\cr  $cr
      * @return \Illuminate\Http\Response
      */
-    public function destroy(ProductImage $productImage)
+    public function destroy(cr $cr)
     {
         //
     }

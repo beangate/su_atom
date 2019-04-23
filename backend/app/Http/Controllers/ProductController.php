@@ -58,11 +58,7 @@ class ProductController extends Controller
                     $s->specification_name = $request->product_specification_name[0];
                     $s->save();  
                  }  
-                  
-                  // dd($request->image1);
-                  $image = $request->image1;
-                  dd($image);
-
+                
                 $msg = 'Product is added';
                 return response()->json(array($msg),200);       
 
