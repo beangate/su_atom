@@ -13,6 +13,20 @@ class ProductController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct(){
+ 
+
+        $this->middleware('admin');
+        // $this->middleware('admin')->only(['store','update','destroy']);
+
+        // $this->middleware('log')->only('index');
+
+        // $this->middleware('subscribed')->except('store');
+
+    }
+
+
+
     public function index()
     {
         return view('adminpanel.add_product');

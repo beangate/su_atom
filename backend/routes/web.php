@@ -1,6 +1,6 @@
 <?php
 
-
+Auth::routes();
 Route::get('/admin-login', function () {
     return view('adminpanel.index');
 });
@@ -30,3 +30,7 @@ Route::get('/payment', function () {
 Route::resource('product','ProductController');
 Route::resource('shop','ShopController');
 Route::resource('product-image','ProductImageController');
+
+
+
+Route::get('/home', 'HomeController@index')->name('home');
