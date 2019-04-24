@@ -1,13 +1,15 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.4.1deb2ubuntu2.1
--- http://www.phpmyadmin.net
+-- version 4.8.3
+-- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Apr 07, 2019 at 06:42 PM
--- Server version: 5.7.23-0ubuntu0.16.04.1
--- PHP Version: 7.0.32-1+ubuntu16.04.1+deb.sury.org+1
+-- Host: 127.0.0.1
+-- Generation Time: Apr 24, 2019 at 07:25 PM
+-- Server version: 10.1.36-MariaDB
+-- PHP Version: 7.2.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -17,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `beangate_sultech`
+-- Database: `shultech`
 --
 
 -- --------------------------------------------------------
@@ -203,7 +205,23 @@ CREATE TABLE `products` (
 
 INSERT INTO `products` (`id`, `product_name`, `product_price`, `product_company`, `product_description`, `warrenty_summary`, `covered_warrenty`, `not_covered_warrenty`, `warrenty_service_type`, `created_at`, `updated_at`) VALUES
 (1, 'das', '32423.00', 'Shultech', 'das', 'asda', 'sda', 'asd', 'asda', '2019-04-07 05:28:53', '2019-04-07 05:28:53'),
-(2, 'das', '3.00', 'Shultech', 'da', 'asd', 'sda', 'asd', 'asd', '2019-04-07 05:40:53', '2019-04-07 05:40:53');
+(2, 'das', '3.00', 'Shultech', 'da', 'asd', 'sda', 'asd', 'asd', '2019-04-07 05:40:53', '2019-04-07 05:40:53'),
+(3, '45dad', '22.00', 'Shultech', 'dad', 'dad', 'dad', 'dad', 'dad', '2019-04-20 21:17:49', '2019-04-20 21:17:49'),
+(4, 'dad', '22.00', 'Shultech', 'dad', 'dad', 'dad', 'dad', 'dad', '2019-04-20 21:18:28', '2019-04-20 21:18:28'),
+(5, 'dad', '22.00', 'Shultech', 'dad', 'dad', 'dad', 'dad', 'dad', '2019-04-20 21:19:10', '2019-04-20 21:19:10'),
+(6, 'dad', '22.00', 'Shultech', 'dad', 'dad', 'dad', 'dad', 'dad', '2019-04-20 21:42:48', '2019-04-20 21:42:48'),
+(7, 'dad', '22.00', 'Shultech', 'dad', 'dad', 'dad', 'dad', 'dad', '2019-04-20 21:43:39', '2019-04-20 21:43:39'),
+(8, 'dad', '22.00', 'Shultech', 'dad', 'dad', 'dad', 'dad', 'dad', '2019-04-20 21:44:12', '2019-04-20 21:44:12'),
+(9, 'dad', '22.00', 'Shultech', 'dad', 'dad', 'dad', 'dad', 'dad', '2019-04-20 21:44:28', '2019-04-20 21:44:28'),
+(10, 'dad', '22.00', 'Shultech', 'dad', 'dad', 'dad', 'dad', 'dad', '2019-04-20 21:44:43', '2019-04-20 21:44:43'),
+(11, 'dad', '22.00', 'Shultech', 'dad', 'dad', 'dad', 'dad', 'dad', '2019-04-20 21:45:01', '2019-04-20 21:45:01'),
+(12, 'dad', '22.00', 'Shultech', 'dad', 'dad', 'dad', 'dad', 'dad', '2019-04-20 21:45:28', '2019-04-20 21:45:28'),
+(13, 'dad', '22.00', 'Shultech', 'dad', 'dad', 'dad', 'dad', 'dad', '2019-04-20 21:46:52', '2019-04-20 21:46:52'),
+(14, 'dad', '22.00', 'Shultech', 'dad', 'dad', 'dad', 'dad', 'dad', '2019-04-20 21:47:07', '2019-04-20 21:47:07'),
+(15, 'dad', '22.00', 'Shultech', 'dad', 'dad', 'dad', 'dad', 'dad', '2019-04-20 21:47:51', '2019-04-20 21:47:51'),
+(16, 'dad', '22.00', 'Shultech', 'dad', 'dad', 'dad', 'dad', 'dad', '2019-04-20 21:48:40', '2019-04-20 21:48:40'),
+(17, 'dad', '22.00', 'Shultech', 'dad', 'dad', 'dad', 'dad', 'dad', '2019-04-20 22:22:24', '2019-04-20 22:22:24'),
+(18, 'dad', '22.00', 'Shultech', 'dad', 'dad', 'dad', 'dad', 'dad', '2019-04-20 22:22:47', '2019-04-20 22:22:47');
 
 -- --------------------------------------------------------
 
@@ -261,14 +279,22 @@ CREATE TABLE `reviews` (
 CREATE TABLE `users` (
   `id` int(10) UNSIGNED NOT NULL,
   `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `contact_number` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `contact_number` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email_verified_at` timestamp NULL DEFAULT NULL,
   `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `role` int(11) NOT NULL DEFAULT '0',
   `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `name`, `contact_number`, `email`, `email_verified_at`, `password`, `role`, `remember_token`, `created_at`, `updated_at`) VALUES
+(1, 'kapil', NULL, 'admin@gmail.com', NULL, '$2y$10$OJH5HxrNcZMgmqJaC0nSJOjo79Iir13Ap/a9r/2vmn6EelQWAUqfq', 1, NULL, '2019-04-24 10:56:54', '2019-04-24 10:56:54');
 
 --
 -- Indexes for dumped tables
@@ -328,7 +354,7 @@ ALTER TABLE `order_statuses`
 -- Indexes for table `password_resets`
 --
 ALTER TABLE `password_resets`
-  ADD KEY `password_resets_email_index` (`email`);
+  ADD KEY `password_resets_email_index` (`email`(191));
 
 --
 -- Indexes for table `pin_codes`
@@ -368,8 +394,7 @@ ALTER TABLE `reviews`
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `users_email_unique` (`email`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -380,121 +405,79 @@ ALTER TABLE `users`
 --
 ALTER TABLE `addresses`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT for table `carts`
 --
 ALTER TABLE `carts`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT for table `coupan_codes`
 --
 ALTER TABLE `coupan_codes`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT for table `histories`
 --
 ALTER TABLE `histories`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=201;
+
 --
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT for table `order_statuses`
 --
 ALTER TABLE `order_statuses`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT for table `pin_codes`
 --
 ALTER TABLE `pin_codes`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+
 --
 -- AUTO_INCREMENT for table `product_images`
 --
 ALTER TABLE `product_images`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT for table `product_specs`
 --
 ALTER TABLE `product_specs`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT for table `reviews`
 --
 ALTER TABLE `reviews`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
---
--- Constraints for dumped tables
---
-
---
--- Constraints for table `addresses`
---
-ALTER TABLE `addresses`
-  ADD CONSTRAINT `addresses_pincode_id_foreign` FOREIGN KEY (`pincode_id`) REFERENCES `pin_codes` (`id`),
-  ADD CONSTRAINT `addresses_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
-
---
--- Constraints for table `carts`
---
-ALTER TABLE `carts`
-  ADD CONSTRAINT `carts_product_id_foreign` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`),
-  ADD CONSTRAINT `carts_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
-
---
--- Constraints for table `histories`
---
-ALTER TABLE `histories`
-  ADD CONSTRAINT `histories_order_id_foreign` FOREIGN KEY (`order_id`) REFERENCES `orders` (`id`);
-
---
--- Constraints for table `orders`
---
-ALTER TABLE `orders`
-  ADD CONSTRAINT `orders_product_id_foreign` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`),
-  ADD CONSTRAINT `orders_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
-
---
--- Constraints for table `order_statuses`
---
-ALTER TABLE `order_statuses`
-  ADD CONSTRAINT `order_statuses_order_id_foreign` FOREIGN KEY (`order_id`) REFERENCES `orders` (`id`);
-
---
--- Constraints for table `product_images`
---
-ALTER TABLE `product_images`
-  ADD CONSTRAINT `product_images_product_id_foreign` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`);
-
---
--- Constraints for table `product_specs`
---
-ALTER TABLE `product_specs`
-  ADD CONSTRAINT `product_specs_product_id_foreign` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`);
-
---
--- Constraints for table `reviews`
---
-ALTER TABLE `reviews`
-  ADD CONSTRAINT `reviews_product_id_foreign` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`),
-  ADD CONSTRAINT `reviews_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
