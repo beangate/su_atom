@@ -151,175 +151,55 @@
 								</div>
 
 								<!-- Product Grid -->
+								<br>
+                                  <div class="row">
+			<div class="col-lg-12 col-12">
+				<div class="panel panel-default">
+					
+  <div class="panel-body">
+  	@foreach($product as $products)
+  <a href="#">
+  	<div class="row">
+  			
+  		<div class="col-md-3 col-12" style="padding-top: 12px;">
+  		<img src="{{ url('web/images/led_default.jpg') }}"  height="140px" width="100%" class="img-responsive img-rounded" >	
+  		
+  		</div>
 
-								<div class="product-grid">
+  		<div class="col-md-5 col-12">
+  			<div class="row">
+  				<div class="col-md-12 col-12">
+  					<h4 class="">{{$products->product_name}}</h4>
+  					<p><span class="badge badge-primary">4.5 <i class="fa fa-star"></i></span> <small>200 Rating & 500 Reviews</small></p>
+  				<ul style="list-style-type: circle;padding-left:  13px;margin:  0px;font-size:  10px;color: dimgrey;">
+  					<li>aaaa</li>
+  					<li>aaaa</li>
+  					<li>aaaa</li>
+  					<li>aaaa</li>
+  				</ul>
+  				</div>
+  				
+  				
+  			</div>
+  			
+  		</div>
+	
+  		<div class="col-md-4">
+  				<h5><b>₹<span class="sum">1299</span></b>, <del> ₹59918%</del><small> Offer Available</small></h5>
+  			<small>10 Days Replacement Policy</small>
+  		</div>
 
-									<!-- Product 1 -->
-									@foreach($product as $products)
-									<div class="product-item men col-12 col-md-4">
-										<div class="product discount product_filter">
-											<div class="product_image">
-												<img src="{{ url('web/images/led_default.jpg') }}" alt="">
-											</div>
-											<div class="favorite favorite_left"></div>
-											<div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center"><span>-$20</span></div>
-											<div class="product_info">
-												<h6 class="product_name"><a href="product_des.html">{{$products->product_name}}</a></h6>
-												<div class="product_price">{{$products->product_price }}<span>59,0000</span></div>
-											</div>
-										</div>
-										<div class="red_button add_to_cart_button"><a href="cart.html">add to cart</a></div>
-									</div>
-									<br>
-                                    @endforeach
-									<!-- Product 2 -->
-{{-- 
-									<div class="product-item women col-12 col-md-4">
-										<div class="product product_filter">
-											<div class="product_image">
-												<img src="images/led_default.jpg" alt="">
-											</div>
-											<div class="favorite"></div>
-											<div class="product_bubble product_bubble_left product_bubble_green d-flex flex-column align-items-center"><span>new</span></div>
-											<div class="product_info">
-												<h6 class="product_name"><a href="product_des.html">Samsung CF591 Series Curved 27-Inch FHD Monitor</a></h6>
-												<div class="product_price">$610.00</div>
-											</div>
-										</div>
-										<div class="red_button add_to_cart_button"><a href="product_des.html">add to cart</a></div>
-									</div>
+  	</div>
+  	</a>
+  	<hr>
+  	 @endforeach
+									
+  </div>
+  
 
-									<!-- Product 3 -->
-
-									<div class="product-item women">
-										<div class="product product_filter">
-											<div class="product_image">
-												<img src="images/led_default.jpg" alt="">
-											</div>
-											<div class="favorite"></div>
-											<div class="product_info">
-												<h6 class="product_name"><a href="product_des.html">Blue Yeti USB Microphone Blackout Edition</a></h6>
-												<div class="product_price">$120.00</div>
-											</div>
-										</div>
-										<div class="red_button add_to_cart_button"><a href="cart.html">add to cart</a></div>
-									</div>
-
-									<!-- Product 4 -->
-
-									<div class="product-item accessories col-12 col-md-4">
-										<div class="product product_filter">
-											<div class="product_image">
-												<img src="images/led_default.jpg" alt="">
-											</div>
-											<div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center"><span>sale</span></div>
-											<div class="favorite favorite_left"></div>
-											<div class="product_info">
-												<h6 class="product_name"><a href="single.html">DYMO LabelWriter 450 Turbo Thermal Label Printer</a></h6>
-												<div class="product_price">$410.00</div>
-											</div>
-										</div>
-										<div class="red_button add_to_cart_button"><a href="cart.html">add to cart</a></div>
-									</div>
-
-									<!-- Product 5 -->
-
-									<div class="product-item women men">
-										<div class="product product_filter">
-											<div class="product_image">
-												<img src="images/led_default.jpg" alt="">
-											</div>
-											<div class="favorite"></div>
-											<div class="product_info">
-												<h6 class="product_name"><a href="single.html">Pryma Headphones, Rose Gold & Grey</a></h6>
-												<div class="product_price">$180.00</div>
-											</div>
-										</div>
-										<div class="red_button add_to_cart_button"><a href="cart.html">add to cart</a></div>
-									</div>
-
-									<!-- Product 6 -->
-
-									<div class="product-item accessories">
-										<div class="product discount product_filter">
-											<div class="product_image">
-												<img src="images/led_default.jpg" alt="">
-											</div>
-											<div class="favorite favorite_left"></div>
-											<div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center"><span>-$20</span></div>
-											<div class="product_info">
-												<h6 class="product_name"><a href="single.html">Fujifilm X100T 16 MP Digital Camera (Silver)</a></h6>
-												<div class="product_price">$520.00<span>$590.00</span></div>
-											</div>
-										</div>
-										<div class="red_button add_to_cart_button"><a href="cart.html">add to cart</a></div>
-									</div>
-
-									<!-- Product 7 -->
-
-									<div class="product-item women">
-										<div class="product product_filter">
-											<div class="product_image">
-												<img src="images/led_default.jpg" alt="">
-											</div>
-											<div class="favorite"></div>
-											<div class="product_info">
-												<h6 class="product_name"><a href="single.html">Samsung CF591 Series Curved 27-Inch FHD Monitor</a></h6>
-												<div class="product_price">$610.00</div>
-											</div>
-										</div>
-										<div class="red_button add_to_cart_button"><a href="cart.html">add to cart</a></div>
-									</div>
-
-									<!-- Product 8 -->
-
-									<div class="product-item accessories">
-										<div class="product product_filter">
-											<div class="product_image">
-												<img src="images/led_default.jpg" alt="">
-											</div>
-											<div class="favorite"></div>
-											<div class="product_info">
-												<h6 class="product_name"><a href="single.html">Blue Yeti USB Microphone Blackout Edition</a></h6>
-												<div class="product_price">$120.00</div>
-											</div>
-										</div>
-										<div class="red_button add_to_cart_button"><a href="cart.html">add to cart</a></div>
-									</div> --}}
-
-								</div>
-
-								<!-- Product Sorting -->
-
-								<div class="product_sorting_container product_sorting_container_bottom clearfix">
-									<ul class="product_sorting">
-										<li>
-											<span>Show:</span>
-											<span class="num_sorting_text">04</span>
-											<i class="fa fa-angle-down"></i>
-											<ul class="sorting_num">
-												<li class="num_sorting_btn"><span>01</span></li>
-												<li class="num_sorting_btn"><span>02</span></li>
-												<li class="num_sorting_btn"><span>03</span></li>
-												<li class="num_sorting_btn"><span>04</span></li>
-											</ul>
-										</li>
-									</ul>
-									<span class="showing_results">Showing 1–3 of 12 results</span>
-									<div class="pages d-flex flex-row align-items-center">
-										<div class="page_current">
-											<span>1</span>
-											<ul class="page_selection">
-												<li><a href="#">1</a></li>
-												<li><a href="#">2</a></li>
-												<li><a href="#">3</a></li>
-											</ul>
-										</div>
-										<div class="page_total"><span>of</span> 3</div>
-										<div id="next_page_1" class="page_next"><a href="#"><i class="fa fa-long-arrow-right" aria-hidden="true"></i></a></div>
-									</div>
-
-								</div>
+			</div>
+			
+		</div>
 
 							</div>
 						</div>
@@ -328,7 +208,7 @@
 			</div>
 		</div>
 	</div>
-
+    </div>
 	<!-- Benefit -->
 
 	<div class="benefit">
