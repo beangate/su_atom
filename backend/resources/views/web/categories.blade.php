@@ -158,7 +158,7 @@
 					
   <div class="panel-body">
   	@foreach($product as $products)
-  <a href="#">
+  <a href="{{url('shop/'.$products->id)}}">
   	<div class="row">
   			
   		<div class="col-md-3 col-12" style="padding-top: 12px;">

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Cart;
 use Illuminate\Http\Request;
+use Auth;
 
 class CartController extends Controller
 {
@@ -12,9 +13,25 @@ class CartController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function __construct(){
+ 
+
+        $this->middleware('auth');
+        // $this->middleware('admin')->only(['store','update','destroy']);
+
+        // $this->middleware('log')->only('index');
+
+        // $this->middleware('subscribed')->except('store');
+
+    }
+
+
     public function index()
     {
-        //
+        $user_id  = Auth::user()->id;
+        $products = Cart::where('user_id',$user_id)->get();
+        return view('web.cart',['products'=>$products]);
     }
 
     /**
@@ -35,9 +52,9 @@ class CartController extends Controller
      */
     public function store(Request $request)
     {
-        //
         $c=new Cart;
-        $c->user_id=$request->user_id;
+
+        $c->user_id= Auth::user()->id;
         $c->product_id=$request->product_id;
         $c->save();
         $msg = 'Cart is added';

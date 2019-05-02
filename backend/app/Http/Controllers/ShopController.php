@@ -47,8 +47,9 @@ class ShopController extends Controller
      * @param  \App\cr  $cr
      * @return \Illuminate\Http\Response
      */
-    public function show(Product $product)
+    public function show($product_id)
     {
+        $product = Product::find($product_id);
         return view('web.single_product',['product'=>$product]);
     }
 

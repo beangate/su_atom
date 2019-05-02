@@ -28,6 +28,7 @@ Route::get('/payment', function () {
 
 
 Route::resource('product','ProductController');
+Route::resource('cart','CartController');
 Route::resource('shop','ShopController');
 Route::resource('product-image','ProductImageController');
 

@@ -42,7 +42,7 @@
 			<div class="col-lg-5">
 				<div class="product_details">
 					<div class="product_details_title">
-						<h4>ShuTech LED Smart TV 4A 108 cm (43)</h4>
+						<h4>{{$product->product_name}}</h4>
 						<p>Nam tempus turpis at metus scelerisque placerat nulla deumantos solicitud felis. Pellentesque diam dolor, elementum etos lobortis des mollis ut...</p>
 					</div>
 					<div class="free_delivery d-flex flex-row align-items-center justify-content-center">
@@ -58,18 +58,9 @@
 						<li><i class="fa fa-star" aria-hidden="true"></i></li>
 						<li><i class="fa fa-star-o" aria-hidden="true"></i></li>
 					</ul>
-					 <div>
-                    <button id="review_submit" type="submit"  class="newsletter_submit_btn trans_300 "  value="buy">BUY</button></div>
-					<div class="quantity d-flex flex-column flex-sm-row align-items-sm-center">
-						<span>Quantity:</span>
-						<div class="quantity_selector">
-							<span class="minus"><i class="fa fa-minus" aria-hidden="true"></i></span>
-							<span id="quantity_value">1</span>
-							<span class="plus"><i class="fa fa-plus" aria-hidden="true"></i></span>
-						</div>
-						<div class="red_button add_to_cart_button"><a href="#">add to cart</a></div>
-						<div class="product_favorite d-flex flex-column align-items-center justify-content-center"></div>
-					</div>
+					 <div> 
+                    <button type="button" data-id="{{$product->id}}"  class="newsletter_submit_btn trans_300 buy-btn"  value="buy">BUY</button></div>
+
 				</div>
 			</div>
 		</div>

@@ -6,6 +6,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="description" content="shop tv,online shopping,">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="csrf-token" content="{{ csrf_token() }}"> 
+
 <link rel="stylesheet" type="text/css" href="{{ url('web/styles/bootstrap4/bootstrap.min.css') }}">
 <link rel="stylesheet" type="text/css" href="{{ url('web/styles/login-register.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ url('web/plugins/OwlCarousel2-2.2.1/owl.carousel.css') }}">
@@ -274,7 +276,9 @@
 <script src="{{ url('web/plugins/OwlCarousel2-2.2.1/owl.carousel.js') }}"></script>
 <script src="{{ url('web/plugins/easing/easing.js') }}"></script>
 <script src="{{ url('web/js/custom.js') }}"></script>
+<script src="{{ url('web/js/single_product.js') }}"></script>
 <script src="{{ url('web/js/login-register.js') }}"></script>
+
 {{-- 
 <script src="js/jquery-3.2.1.min.js"></script>
 <script src="styles/bootstrap4/popper.js"></script>
