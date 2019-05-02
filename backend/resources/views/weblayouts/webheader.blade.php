@@ -19,6 +19,7 @@
 <link rel="stylesheet" type="text/css" href="{{ url('web/plugins/jquery-ui-1.12.1.custom/jquery-ui.css') }}">
 <link rel="stylesheet" type="text/css" href="{{ url ('web/styles/single_styles.css') }}">
 <link rel="stylesheet" type="text/css" href="{{ url('web/styles/categories_styles.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ url('web/styles/contact_styles.css') }}">
 <link rel="stylesheet" type="text/css" href="{{ url('web/styles/categories_responsive.css') }}">
     <style>
      .carousel-inner img {

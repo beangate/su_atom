@@ -7,6 +7,9 @@ Route::get('/admin-login', function () {
 Route::get('/', function () {
     return view('web.index');
 });
+Route::get('/user_panel', function () {
+    return view('web.user_panel');
+});
 // Route::get('/add-product', function () {
 //     return view('adminpanel.add_product');
 // });

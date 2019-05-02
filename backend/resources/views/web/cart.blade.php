@@ -93,62 +93,12 @@ input:disabled{
 				<div class="panel panel-default">
 					<div class="panel-heading">MY CARTS <span > ( <span class="text-info p_count"> </span>  ) </span></div>
   <div class="panel-body">
-  	<div class="row product_count">
-  		<div class="col-md-3 col-4 col-sm-3">
-  		<img src="https://rukminim1.flixcart.com/image/100/100/speaker/mobile-tablet-speaker/3/h/r/portronics-sound-pot-bluetooth-speaker-por-280-original-imaepvwqbv6mhbqp.jpeg?q=90"  height="100px" width="63px" >	
-  		
-  		</div>
-
-  		@foreach($products as $product)
-  			//add your product row here
-  		{{$product}}
-  		
-  		@endforeach
-
-  		<div class="col-md-5 col-8">
-  			<div class="row">
-  				<div class="col-md-12 col-9">
-  					<h5>Color TV</h5>
-  					<p>Black,flat</p>
-  				</div>
-  				<h6><b  id="pd_1">₹<span class="sum">1299</span></b>, <del> ₹59918%</del><small> Offer Available</small></h6>
-  				
-  			</div>
-  			
-  		</div>
-  		<div class="col-md-4">
-  			<p>Delivery by, Fri Feb 15</p>
-  			<small>10 Days Replacement Policy</small>
-  		</div>
-  	</div>
-  	<hr>
-  	<div class="row product_count">
-  		<div class="col-md-3 col-4 col-sm-3">
-  		<img src="https://rukminim1.flixcart.com/image/100/100/speaker/mobile-tablet-speaker/3/h/r/portronics-sound-pot-bluetooth-speaker-por-280-original-imaepvwqbv6mhbqp.jpeg?q=90"  height="100px" width="63px" >
-  		<div class="qty">
-                        <span class="minus bg-dark" id="1">-</span>
-                        <input type="number" class="count" name="qty" id="1" value="1">
-                        <span class="plus bg-dark" id="1">+</span>
-                    </div>	
-  		</div>
-  		<div class="col-md-5 col-8">
-  			<div class="row">
-  				<div class="col-md-12 col-9">
-  					<h5>Color TV</h5>
-  					<p>Black,flat</p>
-  				</div>
-  				<h6><b>₹<span class="sum">1299</span></b>, <del> ₹59918%</del><small> Offer Available</small></h6>
-  				<div class="col-md-12 "><a href="javascript:;" class="remove"><p class="hover text-warning">Remove</p></a></div>
-  				
-  			</div>
-  			
-  		</div>
-  		<div class="col-md-4">
-  			<p>Delivery by, Fri Feb 15</p>
-  			<small>10 Days Replacement Policy</small>
-  		</div>
-  	</div>
-<hr>
+ 
+@foreach($products as $product)
+        //add your product row here
+      {{$product}}
+      
+      
   	<div class="row product_count">
   		<div class="col-md-3 col-4 col-sm-3">
   		<img src="https://rukminim1.flixcart.com/image/100/100/speaker/mobile-tablet-speaker/3/h/r/portronics-sound-pot-bluetooth-speaker-por-280-original-imaepvwqbv6mhbqp.jpeg?q=90"  height="100px" width="63px" >
@@ -175,7 +125,7 @@ input:disabled{
   			<small>10 Days Replacement Policy</small>
   		</div>
   	</div>
-
+@endforeach
   </div>
   <div class="panel-footer">
   	<div class="row">
