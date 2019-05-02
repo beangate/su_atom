@@ -33,6 +33,9 @@
              background: #212121;
          }
     </style>
+    <script type="text/javascript">
+    	var url = "{{url('/')}}";
+    </script>
 </head>
 
 <body>
