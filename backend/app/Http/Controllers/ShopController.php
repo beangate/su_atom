@@ -47,9 +47,9 @@ class ShopController extends Controller
      * @param  \App\cr  $cr
      * @return \Illuminate\Http\Response
      */
-    public function show(cr $cr)
+    public function show(Product $product)
     {
-        //
+        return view('web.single_product',['product'=>$product]);
     }
 
     /**
