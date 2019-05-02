@@ -17,6 +17,7 @@
 <link rel="stylesheet" type="text/css" href="{{ url('web/styles/main_styles.css') }}">
 <link rel="stylesheet" type="text/css" href="{{ url('web/styles/responsive.css') }}">
 <link rel="stylesheet" type="text/css" href="{{ url('web/plugins/jquery-ui-1.12.1.custom/jquery-ui.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ url ('web/styles/single_styles.css') }}">
 <link rel="stylesheet" type="text/css" href="{{ url('web/styles/categories_styles.css') }}">
 <link rel="stylesheet" type="text/css" href="{{ url('web/styles/categories_responsive.css') }}">
     <style>
@@ -94,7 +95,7 @@
 								<li><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li>
 								<li><a href="#"><i class="fa fa-user" aria-hidden="true"></i></a></li>
 								<li class="checkout">
-									<a href="cart.html">
+									<a href="{{ url('/cart') }}">
 										<i class="fa fa-shopping-cart" aria-hidden="true"></i>
 										<span id="checkout_items" class="checkout_items">2</span>
 									</a>
@@ -278,6 +279,9 @@
 <script src="{{ url('web/js/custom.js') }}"></script>
 <script src="{{ url('web/js/single_product.js') }}"></script>
 <script src="{{ url('web/js/login-register.js') }}"></script>
+<script src="{{ url('web/js/single_custom.js') }}"></script>
+<script src="{{ url('web/js/cart.js') }}"></script>
+
 
 {{-- 
 <script src="js/jquery-3.2.1.min.js"></script>
